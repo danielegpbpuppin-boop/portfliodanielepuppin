@@ -1,0 +1,106 @@
+/* RESET BÁSICO */
+* { /*Funções do bloco universal, aplica as seguintes regras a todos os elementos da página web*/
+    margin: 0;/*Remove a margem externa padrão de todos os elementos*/
+    padding: 0;/*Remove o preenchimento interno (padding) padrão de todos os elementos*/
+    box-sizing: border-box;/*Com border-box, a largura (width) e a altura (height) de um elemento incluem o padding e a border, facilitando o cálculo de layouts*/
+    font-family: sans-serif; /*Define uma família de fontes sem serifa como a fonte padrão para todo o texto na página, garantindo que o texto seja legível*/
+}
+
+body {/*define o estilo visual de toda a página*/
+    background-color: #f4f4f4; /* Fundo claro */
+    color: #333; /* Cor do texto principal */
+    line-height: 1.6;/*Define a altura da linha (espaçamento vertical entre linhas de texto),o valor de 1.6 (que é 160% do tamanho da fonte) aumenta o espaçamento padrão*/
+}
+
+/* ESTILOS DO MENU DE NAVEGAÇÃO */
+header {
+    background-color: #333; /* Fundo escuro para o menu */
+    color: white;/*Cor branca do texto para o menu*/
+    position: sticky; /* Menu fixo no topo ao rolar */
+    top: 0;/*Quando a borda superior do cabeçalho atinge a posição de $0$ pixels do topo da viewport (janela do navegador), ele se fixa ali*/
+    z-index: 1000;/*Um valor alto (1000) garante que o cabeçalho fique sempre por cima de outros elementos*/
+}
+
+#main-nav ul {/*este bloco aplica estilos a uma lista não ordenada <uL> que está dentro de um elemento ID main nav*/
+    list-style: none; /*remove os marcadores*/
+    display: flex; /*Transforma <ul> em um contêiner flexível, permitindo que seus itens <li> sejam dispostos lado a lado*/ 
+    justify-content: center;/*Centraliza os itens da lista horizontalmente dentro do contêiner <ul>*/
+    padding: 15px 0;/*Adiciona um espaçamento interno de 15 pixels acima e abaixo do contêiner da lista e 0 pixels nas laterais*/
+}
+
+#main-nav ul li a {/*O bloco #main-nav ul li a tem a função de definir a aparência e o comportamento interativo dos itens clicáveis do menu*/
+    color: white;/*Define a cor do texto dos itens do link como branco*/
+    text-decoration: none;/*Remove o sublinhado padrão que os links possuem*/
+    padding: 10px 20px;/*Adiciona um espaçamento interno ao redor do texto do link: $10$ pixels de preenchimento vertical (acima e abaixo) e $20$ pixels de preenchimento horizontal (nas laterais), aumentando a área clicável*/
+    display: block;/*Transforma o link, que é naturalmente um elemento inline, em um elemento de bloco. Isso permite que o padding e outras propriedades de caixa sejam aplicadas corretamente*/
+    transition: background-color 0.3s;/*Adiciona uma transição suave para qualquer alteração futura na propriedade background-color (cor de fundo)*/
+}
+
+#main-nav ul li a:hover {/*Este bloco define o que acontece visualmente quando o usuário passa o cursor do mouse sobre um dos links de navegação*/
+    background-color: #555;/*Este bloco define o que acontece visualmente quando o usuário passa o cursor do mouse sobre um dos links de navegação*/
+}
+
+/* ESTILOS DO CONTEÚDO PRINCIPAL (SEÇÕES) */
+main {/*é o contêiner que envolve o conteúdo único e central da sua página*/
+    max-width: 1000px;/*Define a largura máxima do conteúdo como $1000$ pixels. Isso impede que o conteúdo se espalhe demais em telas largas, melhorando a legibilidade*/
+    margin: 20px auto;/*Adiciona uma margem de $20$ pixels acima e abaixo do conteúdo e usa auto nas laterais para centralizar o container <main> horizontalmente na tela*/
+    padding: 0 20px;/*Adiciona um preenchimento lateral de $20$ pixels. Isso garante que o conteúdo não toque nas bordas laterais da janela do navegador em telas menores*/
+}
+
+section {/*é usado para agrupar temas ou áreas de conteúdo específicas dentro do main*/
+    background-color: white;/*define o fundo de cada seção como branco*/
+    padding: 40px;/*adicona o preenchimento interno de 40 pixels em todos os lados de cada seção garantindo espaço adequado*/
+    margin-bottom: 20px;/*Adiciona um espaço abaixo de cada seção de 20 pixels, separando-as visualmente umas das outras*/
+    border-radius: 8px;/*Arredonda os cantos das caixas de seção em $8$ pixels, dando um visual mais suave e moderno*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);/*Adiciona uma sombra sutil abaixo de cada seção. Isso dá um efeito de profundidade, fazendo com que as seções pareçam "flutuar" ligeiramente sobre o fundo da página*/
+}
+
+section h2 {/*estiliza os títulos de nível 2 (<h2>)*/
+    color: #007bff; /* Define a cor do título como azul claro/brilhante, uma cor profissional comumente usada para destaque */
+    border-bottom: 2px solid #007bff;/*Adiciona uma linha azul sólida de 2 pixels de espessura na parte inferior do título, reforçando a cor de destaque*/
+    padding-bottom: 10px;/*Adiciona espaçamento entre o texto do título e a linha de borda inferior de 10 pixels*/
+    margin-bottom: 20px;/*Adiciona um espaço abaixo da borda para separar o título do conteúdo que o segue na seção de 20 pixels*/
+}
+
+/* ESTILOS DA SEÇÃO CONTATO (FORMULÁRIO) */
+#contact-form label, #contact-form input, #contact-form textarea, #contact-form button {/*Este bloco aplica as mesmas regras de layout a todos os elementos principais de interação do formulário: rótulos (label), campos de entrada de texto (input), áreas de texto (textarea) e botão (button).*/
+    display: block;/*Transforma todos os elementos em blocos, isso organiza os campos do formulário verticalmente.*/
+    width: 100%;/*Faz com que cada elemento de bloco ocupe a largura total do seu container (o formulário)*/
+    margin-bottom: 10px;/*Adiciona um espaço abaixo de cada elemento de 10 pixels, separando-os para que o formulário não fique apertado*/
+}
+
+#contact-form input, #contact-form textarea {/*Este bloco define a aparência dos campos onde o usuário insere dados (nome, e-mail, mensagem, etc.)*/
+    padding: 10px;/*Adiciona um preenchimento interno de 10 pixels, dando espaço ao redor do texto que o usuário digita e tornando os campos mais altos e fáceis de tocar/clicar*/
+    border: 1px solid #ccc;/*Adiciona uma borda fina e cinza claro (#ccc) de 1 pixel, definindo visualmente o limite do campo*/
+    border-radius: 4px;/*Arredonda levemente os cantos dos campos em 4 pixels, dando um visual mais moderno*/
+}
+
+#contact-form button {/*estiliza o botão de envio do formulário*/
+    background-color: #28a745;/*Define a cor de fundo do botão como verde vibrante (comumente usado para ações de "sucesso" ou "enviar")*/
+    color: white;/*Define a cor do texto do botão como branco, garantindo contraste com o fundo verde*/
+    padding: 12px;/*Adiciona um preenchimento vertical e horizontal de 12 pixels, tornando o botão grande e fácil de clicar*/
+    border: none;/*Remove as bordas padrão do botão*/
+    cursor: pointer;/*Altera o cursor do mouse para uma mãozinha ao passar sobre o botão, indicando que é um elemento clicável*/
+    font-weight: bold;/*Torna o texto do botão negrito para maior destaque*/
+    transition: background-color 0.3s;/*Prepara o botão para uma transição suave de $0.3$ segundos quando sua cor de fundo mudar (usado no estado de hover)*/
+}
+
+#contact-form button:hover {/*Aplica os estilos quando o ponteiro do mouse está sobre o botão*/
+    background-color: #218838;/*Define uma cor de fundo verde ligeiramente mais escura quando o mouse está sobre o botão*/
+}
+
+
+@media (max-width: 600px) {/*Declarações com responsividade para telas com largura máxima de 600 px (celulares)*/
+    #main-nav ul {
+        flex-direction: column; /* Links em coluna em telas pequenas */
+    }
+    
+    #main-nav ul li a {
+        text-align: center;/*Centraliza o texto de cada link de navegação*/
+        padding: 10px;/*Adiciona um espaçamento interno de 10 px ao redor de cada link, tornando-os mais fáceis de tocar em telas pequenas*/
+    }
+
+    section {
+        padding: 20px;/*Reduz o espaçamento interno padrão (padding) das seções para 20 px, otimizando o uso do espaço vertical em telas pequenas*/
+    }
+}
